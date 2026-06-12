@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: sis_banda_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=sis_banda_prod
+      - POSTGRES_USER=admin_banda
+      - POSTGRES_PASSWORD=meji_no_pierde_123
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    container_name: sis_banda_web
+    command: >
+      bash -c "python wait_for_db.py &&
+               python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=django-insecure-development-key-change-in-production
+      - ALLOWED_HOSTS=localhost,127.0.0.1,192.168.3.179,0.0.0.0,web
+      - ACCESS_TOKEN_LIFETIME=31536000
+      - REFRESH_TOKEN_LIFETIME=31622400
+      - DB_NAME=sis_banda_prod
+      - DB_USER=admin_banda
+      - DB_PASSWORD=meji_no_pierde_123
+      - DB_HOST=db
+      - DB_PORT=5432
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: sis_banda_frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5174:5173"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - VITE_API_URL=http://192.168.3.179:8000/api/
+
+volumes:
+  postgres_data:
