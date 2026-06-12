@@ -2,27 +2,27 @@
 
 Un sistema completo para la administración de bandas de música con gestión de personal, eventos, asistencia, pagos y un sistema de rendimiento (Canastón).
 
-## 🎯 Características Principales
+## Características Principales
 
-### 👥 Gestión de Personal y Roles
+### Gestión de Personal y Roles
 - **Perfiles completos de músicos**: CI, datos personales, tallas de uniforme, instrumento, nivel
 - **Sistema de roles diferenciados**:
-  - 🎖️ **Director**: Acceso total al sistema
-  - 📋 **Subdirector/Jefe de Sección**: Gestión de datos y eventos
-  - 🎵 **Músico**: Vista de perfil y pagos
+  - **Director**: Acceso total al sistema
+  -  **Subdirector/Jefe de Sección**: Gestión de datos y eventos
+  - **Músico**: Vista de perfil y pagos
 
-### 📅 Operaciones y Logística
+###  Operaciones y Logística
 - **Módulo de Eventos**: Presentaciones, ensayos y reuniones
 - **Control de Asistencia**: Registro de puntualidad automático
 - **Geolocalización**: Integración con Google Maps (opcional)
 
-### 📄 Procesamiento Inteligente de Descuentos (Feature Estrella)
+###  Procesamiento Inteligente de Descuentos (Feature Estrella)
 - **OCR/Parsing de PDF**: Procesamiento automático de PDFs de descuentos
 - **Reconocimiento automático**: Identifica nombres y montos
 - **Validación inteligente**: Mapeo con base de datos de músicos
 - **Interfaz de confirmación**: Revisión antes de procesar
 
-### 📊 Estadígrafos y Gamificación (Sistema del Canastón)
+###  Estadígrafos y Gamificación (Sistema del Canastón)
 - **Algoritmo de Rendimiento**: Score de Lealtad (0-100)
 - **Factores de cálculo**:
   - % de Asistencia (40% peso)
@@ -32,12 +32,12 @@ Un sistema completo para la administración de bandas de música con gestión de
 - **Dashboard visual**: Gráficos con Chart.js
 - **Top 10 de músicos** para reconocimiento
 
-### 💰 Gestión Financiera
+###  Gestión Financiera
 - **Módulo de Pagos**: Cálculo automático de sueldos
 - **Reportes PDF**: Recibos individuales y reportes mensuales
 - **Control de descuentos**: Integración con sistema de OCR
 
-## 🛠️ Stack Tecnológico
+##  Stack Tecnológico
 
 - **Backend**: Django 4.2.7 + Django REST Framework
 - **Frontend**: Bootstrap 5 + Chart.js
@@ -45,13 +45,13 @@ Un sistema completo para la administración de bandas de música con gestión de
 - **Procesamiento PDF**: pdfplumber (PyMuPDF es opcional y puede requerir herramientas de compilación adicionales)
 - **Análisis de datos**: Pandas + NumPy
 
-## 📋 Requisitos Previos
+##  Requisitos Previos
 
 - Python 3.8+
 - pip (gestor de paquetes de Python)
 - Git
 
-## 🚀 Instalación
+##  Instalación
 
 ### 1. Clonar el repositorio
 ```bash
@@ -207,7 +207,7 @@ Dashboard → Canastón
 - Ver estadísticas detalladas
 - Exportar reportes
 
-## 🎨 Personalización
+##  Personalización
 
 ### Cambiar logo y colores
 Editar `static/css/style.css`:
@@ -235,7 +235,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-## 📊 Reportes y Exportación
+##  Reportes y Exportación
 
 ### Reportes disponibles
 - **Reporte de Asistencia**: Por período y tipo de evento
@@ -265,9 +265,9 @@ Carlos Lopez 75.00
    - Nombres de músicos
    - Montos de descuento
 4. Validación contra base de datos:
-   - ✅ Coincidencias exactas (verde)
-   - ⚠️ Coincidencias parciales (amarillo)
-   - ❌ Sin coincidencia (rojo)
+   -  Coincidencias exactas (verde)
+   -  Coincidencias parciales (amarillo)
+   -  Sin coincidencia (rojo)
 5. Confirmar descuentos válidos
 6. Sistema guarda automáticamente
 
@@ -276,7 +276,7 @@ Carlos Lopez 75.00
 - Formato claro: Nombre + espacio + monto
 - Evitar símbolos especiales
 
-## 🐛 Solución de Problemas
+##  Solución de Problemas
 
 ### Problemas comunes
 
@@ -324,7 +324,7 @@ LOGGING = {
 }
 ```
 
-## 🚀 Despliegue en Producción
+##  Despliegue en Producción
 
 ### 1. Configurar variables de entorno
 ```env
@@ -349,7 +349,7 @@ python manage.py collectstatic --noinput
 gunicorn core.wsgi:application --bind 0.0.0.0:8000
 ```
 
-## 📝 API Endpoints
+##  API Endpoints
 
 ### Endpoints disponibles
 - `GET /api/musicos/search/` - Búsqueda de músicos
@@ -362,7 +362,7 @@ fetch('/api/musicos/search/?term=carlos')
     .then(data => console.log(data.results));
 ```
 
-## 🤝 Contribución
+##  Contribución
 
 ### Flujo de trabajo
 1. Fork del repositorio
@@ -376,14 +376,14 @@ fetch('/api/musicos/search/?term=carlos')
 - Usar flake8 para linting: `flake8 .`
 - Cubrir código con tests: `coverage run -m pytest`
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto está licenciado bajo MIT License.
 
-## 📞 Soporte
+##  Soporte
 
 Para soporte técnico:
-- Email: soporte@banda.com
+- Email: franzmonasterios6@gmail.com
 - Documentación: [Link a documentación]
 - Issues: [Link a GitHub Issues]
 
